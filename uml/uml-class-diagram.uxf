@@ -1,0 +1,190 @@
+<diagram program="umletino" version="15.1"><zoom_level>17</zoom_level><help_text>Space for diagram note</help_text><element><id>UMLClass</id><coordinates><x>1224</x><y>765</y><w>425</w><h>170</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Pedido
+--
+
+--
++ calcularPrecoTotal(): double
++ exibirDetalhes(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1819</x><y>748</y><w>561</w><h>493</h></coordinates><panel_attributes>&lt;&lt;clas&gt;&gt;
+ListaDeEspera
+--
+-  INSTANCE: ListaDeEspera
+- pedidosEmFila: Queue&lt;Pedido&gt;
+- pedidosConcluidos: List&lt;Pedido&gt;         
+- notifier: NotificacaoPedido
+- contadorPedidos: int     
+--
+- ListaDeEspera()
++ getInstance(): ListaDeEspera
++ adicionarPedido(pedido: Pedido): void
++ exibirFila(): void
++ processarProximoPedido(): void
++ marcarPedidoComoRetirado(pedido: Pedido): void
++ processarPedidos(): void
+- removerDaFilaParaConcluido(pedido: Pedido): boolean 
++ getPedidosEmFila(): Queue&lt;Pedido&gt;
++ getPedidosConcluidos(): List&lt;Pedido&gt;
++ limparPedidos(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>595</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoProteinaExtra
+--
+- PRECO: double = 4.00
+--
++ AcrescimoProteinaExtra(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+group=group-2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>408</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoChilli
+--
+- PRECO: double = 2.50
+--
++ AcrescimoChilli(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+group=group-2
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>221</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoCremeAlho
+--
+- PRECO: double = 1.50
+--
++ AcrescimoCremeAlho(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>578</x><y>765</y><w>425</w><h>255</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+AcrescimoDecorator
+--
+- pedido: Pedido
+--
++ AcrescimoDecorator(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
++ getPedido(): Pedido
++ setPedido(pedido: Pedido): void
+        </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>782</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoCroutons
+--
+- PRECO: double = 2.00
+--
++ AcrescimoCroutons(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+group=group-2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>986</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoTofu
+--
+- PRECO: double = 2.70
+--
++ AcrescimoTofu(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+group=group-2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1173</y><w>408</w><h>170</h></coordinates><panel_attributes>AcrescimoShitake
+--
+- PRECO: double = 6.90
+--
++ AcrescimoShitake(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+group=group-2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>255</y><w>119</w><h>255</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;130;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>459</y><w>119</w><h>221</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;110;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>646</y><w>119</w><h>187</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;90;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>595</y><w>119</w><h>289</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;10;50;150;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>833</y><w>153</w><h>51</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>833</y><w>119</w><h>255</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;130;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>1020</y><w>119</w><h>238</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;120;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>391</x><y>1207</y><w>119</w><h>68</h></coordinates><panel_attributes>lt=-
+group=group-2</panel_attributes><additional_attributes>50;10;50;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1411</x><y>918</y><w>51</w><h>255</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1394</x><y>0</y><w>374</w><h>204</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+AcrescimoKocha
+--
+- PRECO: double = 0.00
+--
++AcresimoKocha(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>986</x><y>833</y><w>272</w><h>51</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1836</x><y>1377</y><w>595</w><h>153</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+RamenFactory
+--
+
+--
++ criarRamen(tipo: String, proteina: String): Ramen
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>0</y><w>391</w><h>204</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+AcrescimoOcha
+--
+- PRECO: double = 3.90
+--
++ AcrescimoOcha(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>527</x><y>17</y><w>391</w><h>187</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt;
+AcrescimoRefrigerante
+--
+- PRECO: double = 5.90
+--
++ AcrescimoRefrigerante(pedido: Pedido)
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1139</x><y>408</y><w>527</w><h>170</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt; 
+BalancoFinal
+--
+-predidosConcluidos: List&lt;Pedido&gt;
+--
++ BalancoFinal(List&lt;Pedido&gt; pedidosConcluidos)
++ exibirBalanco(): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>986</x><y>782</y><w>272</w><h>51</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1632</x><y>867</y><w>221</w><h>85</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+Contém &gt;</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>867</x><y>1649</y><w>357</w><h>136</h></coordinates><panel_attributes>RamenPequeno
+--
+
+--
+ + RamenPequeno(proteina: String)
+group=group-0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1411</x><y>1581</y><w>425</w><h>102</h></coordinates><panel_attributes>lt=-
+group=group-0</panel_attributes><additional_attributes>10;40;10;10;230;10;230;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1258</x><y>1649</y><w>323</w><h>136</h></coordinates><panel_attributes>RamenMedio
+--
+
+--
++ RamenMedio(proteina: String)
+group=group-0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1632</x><y>1649</y><w>340</w><h>136</h></coordinates><panel_attributes>RamenGrande
+--
+
+--
++ RamenGrande(proteina: String)
+group=group-0</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1037</x><y>1581</y><w>425</w><h>102</h></coordinates><panel_attributes>lt=-
+group=group-0</panel_attributes><additional_attributes>230;10;10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1156</x><y>1139</y><w>544</w><h>357</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Ramen
+--
+- precoBase: double
+- tamanho: String
+- proteina: Proteina
+- precoProteina: double
+- PRECO_PROTEINA: Map&lt;String, Double&gt; 
+--
++ Ramen(proteina: String, tamanho: String) 
++ exibirDetalhes(): String
++ calcularPrecoTotal(): double
++ getPrecoBase(): double
++ setPrecoBase(precoBase: double): void
+
+        </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1411</x><y>1479</y><w>51</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1683</x><y>1462</y><w>187</w><h>51</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1836</x><y>459</y><w>510</w><h>153</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt; 
+FormatarPedido
+--
+
+--
++ formatarPedido(pedido: Pedido): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2499</x><y>714</y><w>527</w><h>153</h></coordinates><panel_attributes>&lt;&lt;class&gt;&gt; 
+NotificarPedido
+--
+
+--
+ + notificarCliente(pedido: Pedido): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2363</x><y>748</y><w>170</w><h>68</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>2278</x><y>595</y><w>51</w><h>187</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1411</x><y>561</y><w>102</w><h>238</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+Usa &gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>34</x><y>1734</y><w>357</w><h>153</h></coordinates><panel_attributes>&lt;&lt;Enumaration&gt;&gt;
+Proteina 
+--
+VEGANO
+PORCO
+BOI
+--
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>187</y><w>51</w><h>612</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>187</y><w>867</w><h>153</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;70;490;70;490;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1105</x><y>187</y><w>51</w><h>153</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element></diagram>

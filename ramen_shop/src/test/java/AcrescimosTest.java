@@ -1,0 +1,33 @@
+import br.lpm.factories.RamenFactory;
+import br.lpm.model.Pedido;
+import br.lpm.types.AcrescimoChilli;
+import br.lpm.types.AcrescimoCremeAlho;
+import br.lpm.types.AcrescimoCroutons;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AcrescimosTest {
+
+    @Test
+    public void testAdicionarApenasUmAcrescimo() {
+        Pedido ramen = RamenFactory.criarRamen("medio", "Vegano");
+        ramen = new AcrescimoCremeAlho(ramen);
+
+        double precoTotal = ramen.calcularPrecoTotal();
+        assertEquals(18.3, precoTotal, 0.01, "O preço total com creme de alho deve ser 18.3");
+    }
+
+    @Test
+    public void testAdicionarMultiplosAcrescimos() {
+        Pedido ramen = RamenFactory.criarRamen("grande", "Porco");
+        ramen = new AcrescimoCremeAlho(ramen);
+        ramen = new AcrescimoChilli(ramen);
+        ramen = new AcrescimoCroutons(ramen);
+
+        double precoTotal = ramen.calcularPrecoTotal();
+        assertEquals(27.8, precoTotal, 0.01, 
+        "O preço total com creme de alho, chilli e croutons deve ser 27.8");
+    }
+}
